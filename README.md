@@ -5,6 +5,7 @@ Announces new videos in the [Diogoritmos YouTube channel](https://www.youtube.co
 ## Setup
 
 Install dependencies:
+
 ```
 npm install
 ```
