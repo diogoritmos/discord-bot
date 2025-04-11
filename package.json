@@ -6,10 +6,22 @@
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev --test-scheduled",
 		"start": "wrangler dev --test-scheduled",
-		"cf-typegen": "wrangler types"
+		"cf-typegen": "wrangler types",
+		"lint": "eslint . --ext .ts",
+		"lint:fix": "eslint . --ext .ts --fix",
+		"format": "prettier --check .",
+		"format:fix": "prettier --write ."
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20250410.0",
+		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/parser": "^6.21.0",
+		"eslint": "^8.57.1",
+		"eslint-config-prettier": "^10.1.2",
+		"eslint-config-standard-with-typescript": "^43.0.1",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-prettier": "^5.2.6",
+		"eslint-plugin-unused-imports": "^4.1.4",
+		"prettier": "^3.5.3",
 		"typescript": "^5.5.2",
 		"wrangler": "^4.10.0"
 	}

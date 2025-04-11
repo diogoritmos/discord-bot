@@ -1,5 +1,12 @@
 {
 	"files.associations": {
 		"wrangler.json": "jsonc"
-	}
+	},
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always",
+		"source.fixAll.eslint": "always"
+	},
+	"eslint.validate": ["typescript"],
+	"prettier.requireConfig": true
 }
