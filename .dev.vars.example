@@ -1,1 +1,4 @@
 YOUTUBE_CHANNEL_ID = "example"
+YOUTUBE_CHANNEL_TITLE = "example"
+DISCORD_WEBHOOK_ID = "example"
+DISCORD_WEBHOOK_TOKEN = "example"
