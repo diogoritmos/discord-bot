@@ -22,6 +22,7 @@ interface YoutubeVideoEntry {
 }
 
 interface Video {
+	id: string;
 	title: string;
 	url: string;
 	tsPublished: Date;
@@ -37,6 +38,7 @@ const getRecentVideos = async (channelId: string, maxResults: number = 1): Promi
 
 	return entries
 		.map((entry) => ({
+			id: entry["yt:videoId"],
 			title: entry.title,
 			url: `https://www.youtube.com/watch?v=${entry["yt:videoId"]}`,
 			tsPublished: new Date(entry.published),

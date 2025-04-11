@@ -13,6 +13,12 @@ export default {
 
 	async scheduled(event, env, ctx): Promise<void> {
 		const latestVideo = (await youtube.getRecentVideos(env.YOUTUBE_CHANNEL_ID))[0];
+		const lastNotifiedVideoId = await env.KV_BINDING.get("lastNotifiedVideoId");
+
+		if (latestVideo.id === lastNotifiedVideoId) {
+			console.log("No new videos to notify.");
+			return;
+		}
 
 		const content = `
 		🎬 Novo vídeo no ar!
@@ -26,5 +32,9 @@ export default {
 		`.trim();
 
 		await discord.sendMessage(env.DISCORD_WEBHOOK_ID, env.DISCORD_WEBHOOK_TOKEN, content);
+		console.log(`Notified about new video: ${latestVideo.title}`);
+
+		await env.KV_BINDING.put("lastNotifiedVideoId", latestVideo.id);
+		console.log(`Updated last notified video ID to: ${latestVideo.id}`);
 	},
 } satisfies ExportedHandler<Env>;
