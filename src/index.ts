@@ -12,7 +12,10 @@ export default {
 	},
 
 	async scheduled(event, env, ctx): Promise<void> {
+		console.log("Fetching latest video from YouTube...");
 		const latestVideo = (await youtube.getRecentVideos(env.YOUTUBE_CHANNEL_ID))[0];
+
+		console.log("Getting last notified video ID from KV...");
 		const lastNotifiedVideoId = await env.KV_BINDING.get("lastNotifiedVideoId");
 
 		if (latestVideo.id === lastNotifiedVideoId) {

@@ -33,6 +33,12 @@ const getRecentVideos = async (channelId: string, maxResults: number = 1): Promi
 	const res = await fetch(feedUrl);
 	const text = await res.text();
 
+	console.log(`YouTube feed response: ${res.status} ${res.statusText}`);
+	if (!res.ok) {
+		console.error(`Error fetching YouTube feed, body: ${text}`);
+		throw new Error(`Failed to fetch YouTube feed: ${res.statusText}`);
+	}
+
 	const parser = new XMLParser();
 	const entries = parser.parse(text).feed.entry as YoutubeVideoEntry[];
 
