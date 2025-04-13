@@ -16,7 +16,7 @@ export default {
 			case "*/5 * * * *":
 				await contentAnnouncer.main(env);
 				break;
-			case "0 22 * * 0":
+			case "0 22 * * SUN":
 				await exerciseRanker.main(env);
 				break;
 			default:
