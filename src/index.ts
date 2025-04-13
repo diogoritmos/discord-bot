@@ -1,4 +1,5 @@
 import contentAnnouncer from "./contentAnnouncer";
+import exerciseRanker from "./exerciseRanker";
 
 export default {
 	async fetch(req) {
@@ -14,6 +15,9 @@ export default {
 		switch (event.cron) {
 			case "*/5 * * * *":
 				await contentAnnouncer.main(env);
+				break;
+			case "0 22 * * 0":
+				await exerciseRanker.main(env);
 				break;
 			default:
 				throw new Error(`Unknown cron event: ${event.cron}`);

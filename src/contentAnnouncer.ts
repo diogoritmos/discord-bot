@@ -24,11 +24,15 @@ const main = async (env: Env) => {
 		💬 E comenta lá o que achou ou o que gostaria de ver nos próximos vídeos!
 		`.trim();
 
-	await discord.sendMessage(env.DISCORD_WEBHOOK_ID, env.DISCORD_WEBHOOK_TOKEN, content);
-	console.log(`Notified about new video: ${latestVideo.title}`);
+	console.log(`Sending notification to Discord about new video ${latestVideo.title}...`);
+	await discord.sendMessage(
+		env.DISCORD_CONTENT_ANNOUNCER_WEBHOOK_ID,
+		env.DISCORD_CONTENT_ANNOUNCER_WEBHOOK_TOKEN,
+		content,
+	);
 
+	console.log(`Updating last notified video ID to ${latestVideo.id}...`);
 	await env.KV_BINDING.put("lastNotifiedVideoId", latestVideo.id);
-	console.log(`Updated last notified video ID to: ${latestVideo.id}`);
 };
 
 export default { main };
