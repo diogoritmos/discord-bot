@@ -1,5 +1,6 @@
 import contentAnnouncer from "./contentAnnouncer";
 import exerciseRanker from "./exerciseRanker";
+import jobFinder from "./jobFinder";
 
 export default {
 	async fetch(req) {
@@ -18,6 +19,9 @@ export default {
 				break;
 			case "0 22 * * SUN":
 				await exerciseRanker.main(env);
+				break;
+			case "0 10 * * MON-FRI":
+				await jobFinder.main(env);
 				break;
 			default:
 				throw new Error(`Unknown cron event: ${event.cron}`);
