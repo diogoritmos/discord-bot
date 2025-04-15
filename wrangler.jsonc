@@ -6,6 +6,15 @@
 	"observability": {
 		"enabled": true,
 	},
+	"vars": {
+		"YOUTUBE_CHANNEL_ID": "UCzOK2e00u1BlSWFEn4G-XIA",
+		"YOUTUBE_CHANNEL_TITLE": "diogoritmos",
+		"DISCORD_CONTENT_ANNOUNCER_WEBHOOK_ID": "1360364047987511336",
+		"DISCORD_EXERCISE_RANKER_WEBHOOK_ID": "1361062652578631840",
+		"DISCORD_EXERCISE_EVENT_URL": "https://discord.gg/QVaGSSS98f?event=1343385998004060261",
+		"GOOGLE_SPREADSHEETS_ID": "2PACX-1vRkwun_U7mIziZiYhAm7hRJ3qjpuX_IsTp2Hw7hFBs0y9Yl_6-ISQbn7-b17YAbhs443vapmZa6-NY9",
+		"GOOGLE_SPREADSHEETS_GID": "0",
+	},
 	"triggers": {
 		"crons": ["*/5 * * * *", "0 22 * * SUN"],
 	},
