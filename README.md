@@ -17,6 +17,13 @@ Install dependencies:
 npm install
 ```
 
+Run format and lint:
+
+```
+npm run format
+npm run lint
+```
+
 You can use this project to create your own bot, being required to deploy a `KV` and `Worker` on
 their platform, updating the environment variables in `.dev.vars` and `wrangler.jsonc`.
 
@@ -37,7 +44,7 @@ Develop with:
 npm run dev
 
 # Set up a custom cron expression to evaluate different scheduled jobs
-curl "http://localhost:8787/__scheduled?cron=*+*+*+*+*" 
+curl "http://localhost:8787/__scheduled?cron=*+*+*+*+*"
 ```
 
 ## Deployment
@@ -53,7 +60,7 @@ Requires access to the CloudFlare organization.
 ## Binding resources
 
 Bind resources to the Worker in `wrangler.jsonc` (like adding a new env var). After adding bindings,
-a type definition for the `Env` object can be regenerated with 
+a type definition for the `Env` object can be regenerated with
 
 ```
 npm run cf-typegen
