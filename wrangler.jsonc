@@ -3,6 +3,7 @@
 	"name": "diogoritmos-discord-bot",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-04-10",
+	"compatibility_flags": ["nodejs_compat"],
 	"observability": {
 		"enabled": true,
 	},
@@ -22,6 +23,10 @@
 		{
 			"binding": "KV_BINDING",
 			"id": "0287105026184e338adf817ed8e8e9a2",
+			"preview_id": "702b012c7aa3402bbbfcdc6c72b896af",
 		},
 	],
+	"browser": {
+		"binding": "MYBROWSER",
+	}
 }
